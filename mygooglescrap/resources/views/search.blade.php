@@ -97,6 +97,7 @@
 				$('#ajax-loader').show();
 
 				page = nbpage;
+				$('#nbPage').html("Page " + page);
 
 				$.post(
 						$( '#form-search' ).prop( 'action' ),
@@ -154,13 +155,16 @@
 		</div>
 		{!!  Form::close() !!}
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-2" id="nbPage">
+
+			</div>
+			<div class="col-md-2">
 				{!! Form::button('Première Page', array('class'=>'btn btn-info', 'id'=>'first')) !!}
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-2">
 				{!! Form::button('Page Précédente', array('class'=>'btn btn-info', 'id'=>'prev')) !!}
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-2">
 				{!! Form::button('Page Suivante', array('class'=>'btn btn-info', 'id'=>'next')) !!}
 			</div>
 		</div>
