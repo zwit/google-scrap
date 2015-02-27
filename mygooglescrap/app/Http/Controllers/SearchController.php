@@ -28,7 +28,7 @@ class SearchController extends Controller {
 		putenv('PATH=C:/phantomjs;');
 		$forge = 'js\casperjs\batchbin\casperjs.bat js\casperjs\tests\commands\mytest.js "'.$request->input('search').'"';
 		if ($request->input('search') != '')
-			$forge .= ' '.($request->input('page')-1)*10;
+			$forge .= ' '.$request->input('page');
 		exec($forge, $output);
 
 		return Response::json( (implode($output)) );
