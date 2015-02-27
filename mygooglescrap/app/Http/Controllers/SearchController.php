@@ -31,27 +31,6 @@ class SearchController extends Controller {
 			$forge .= ' '.($request->input('page')-1)*10;
 		exec($forge, $output);
 
-		//var_dump($output);
-
-		/*$casper = new \Browser\Casper();
-		$casper->setPath(public_path().'/php');
-		$casper->start("http://google.fr/");
-		$casper->fillForm(
-			'form[action="/search"]',
-			array(
-				'q' => 'search'
-			),
-			true);
-
-		var_dump($casper->run());
-		var_dump($casper->getRequestedUrls());
-		//var_dump($casper->getOutput());*/
-
-		//var_dump($output);
-		//var_dump(json_decode(implode($output)));
-
-		//return View::make('search', array('results' => json_decode(implode($output))));
-
 		return Response::json( (implode($output)) );
 	}
 
