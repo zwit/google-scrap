@@ -25,7 +25,7 @@ class SearchController extends Controller {
 			'search' => 'required',
 		]);
 
-		putenv('PATH=C:/phantomjs;');
+		putenv('PATH='.public_path().'\js\phantomjs;');
 		$forge = 'js\casperjs\batchbin\casperjs.bat js\casperjs\tests\commands\mytest.js "'.$request->input('search').'"';
 		if ($request->input('search') != '')
 			$forge .= ' '.$request->input('page');
